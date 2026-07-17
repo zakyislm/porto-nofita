@@ -13,6 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: settings.site_title || "Porto | Nofita",
     description: settings.site_description || "Digital creator specializing in public relations and social media strategy.",
+    verification: {
+      google: "jeEVaKYPTiVYoljU5_I6pYmI6zHZwW28XJLc1ZtNX4g",
+    },
   };
 }
 
@@ -25,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <style dangerouslySetInnerHTML={{ __html: `\n/*\n${_obf}\n*/\n` }} />
         <Script id="creator-mark" strategy="beforeInteractive">
-          {`console.log(\`\\n\${${JSON.stringify(_obf)}}\`);`}
+          {`console.log(${JSON.stringify("\\n" + _obf)});`}
         </Script>
       </head>
       <body className={`${manrope.variable} antialiased relative`}>

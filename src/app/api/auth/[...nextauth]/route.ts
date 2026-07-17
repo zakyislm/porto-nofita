@@ -15,7 +15,6 @@ export const authOptions: NextAuthOptions = {
   ],
   session: {
     strategy: "jwt",
-    maxAge: 0, // Session ends when browser closes
   },
   callbacks: {
     async signIn({ user }) {
