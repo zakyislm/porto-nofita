@@ -1,0 +1,103 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap');
+
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+@theme {
+  --color-background: #f9f9f9;
+  --color-on-background: #1b1b1b;
+  
+  --color-surface: #f9f9f9;
+  --color-on-surface: #1b1b1b;
+  --color-surface-dim: #dadada;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface-variant: #494456;
+
+  --color-primary: #4800b2;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #6200ee;
+  --color-on-primary-container: #d0beff;
+  
+  --color-secondary: #7743b5;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #bc87fe;
+  --color-on-secondary-container: #4d118b;
+  --color-secondary-fixed: #eedbff;
+  --color-on-secondary-fixed: #2a0053;
+
+  --color-tertiary: #354100;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #4a5a00;
+  --color-on-tertiary-container: #b2d600;
+  --color-tertiary-fixed: #caf300;
+  --color-on-tertiary-fixed: #171e00;
+  --color-tertiary-fixed-dim: #b0d500;
+
+  --font-heading: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+}
+
+/* ── Base ── */
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* ── Neobrutalism Utilities ── */
+@layer utilities {
+  .neobrutal-shadow {
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+  }
+  .neobrutal-shadow-lg {
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+  }
+  .neobrutal-shadow-sm {
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  }
+  .neobrutal-interactive {
+    transition: transform 100ms ease, box-shadow 100ms ease;
+  }
+  .neobrutal-interactive:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+  .neobrutal-interactive:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  }
+
+  .bg-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .bg-grid {
+    background-image: radial-gradient(circle, #000 1.5px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.25;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
