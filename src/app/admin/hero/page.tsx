@@ -92,7 +92,7 @@ export default function EditHero() {
         setUploading(true);
         const pData = new FormData();
         pData.append("file", portraitFile);
-        pData.append("bucket", "porto-assets");
+        pData.append("bucket", "nofita-story-bucketzx");
         if (portraitUrl) pData.append("oldUrl", portraitUrl);
 
         const res = await fetch("/api/admin/upload", { method: "POST", body: pData });
@@ -107,7 +107,7 @@ export default function EditHero() {
         setUploading(true);
         const cData = new FormData();
         cData.append("file", cvFile);
-        cData.append("bucket", "porto-assets");
+        cData.append("bucket", "nofita-story-bucketzx");
         if (cvUrl) cData.append("oldUrl", cvUrl);
 
         const res = await fetch("/api/admin/upload", { method: "POST", body: cData });

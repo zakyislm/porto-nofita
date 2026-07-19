@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   try {
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
-    const bucket = (formData.get("bucket") as string) || "porto-assets";
+    const bucket = (formData.get("bucket") as string) || "nofita-story-bucketzx";
 
     const oldUrl = formData.get("oldUrl") as string | null;
 

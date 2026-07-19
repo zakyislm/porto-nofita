@@ -79,7 +79,7 @@ export default function ManageProjects() {
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("bucket", "porto-assets");
+    formData.append("bucket", "nofita-story-bucketzx");
 
     try {
       const res = await fetch("/api/admin/upload", {
