@@ -3,6 +3,7 @@
 import Link from "next/link";
 import DecorativeShapes from "@/components/DecorativeShapes";
 import { Settings } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { getSocialPlatform } from "@/lib/socials";
 
 interface FooterProps {
@@ -26,9 +27,21 @@ export default function Footer({ email, socialLinks = [], title }: FooterProps) 
           {displayTitle}
         </div>
 
-        <p className="font-mono text-on-secondary opacity-80 text-center md:text-left text-sm">
-          © {currentYear} Nofita.
-        </p>
+        <div className="flex flex-col items-center md:items-start gap-1">
+          <p className="font-mono text-on-secondary opacity-80 text-center md:text-left text-sm">
+            © {currentYear} Nofita.
+          </p>
+          <Link
+            href="https://zakyislm.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Built by Zaky Islam Al Hafidz"
+            className="flex items-center gap-1 font-mono text-on-secondary opacity-60 hover:opacity-100 transition-opacity text-xs"
+          >
+            <FaGithub className="w-3 h-3" />
+            <span>by zakyislm</span>
+          </Link>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/admin" title="Admin Dashboard" className="bg-surface text-on-surface border-[2px] border-black p-2 font-mono text-xs capitalize font-bold neobrutal-shadow-sm neobrutal-interactive flex items-center justify-center">
@@ -51,11 +64,6 @@ export default function Footer({ email, socialLinks = [], title }: FooterProps) 
 
       </div>
 
-      {/* Hidden Author Credit for Crawlers */}
-      <div className="sr-only" aria-hidden="true">
-        <p>Built by Zaky Islam Al Hafidz</p>
-        <a href="https://zakyislm.github.io">https://zakyislm.github.io</a>
-      </div>
     </footer>
   );
 }

@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: settings.site_title || "Porto | Nofita",
     description: settings.site_description || "Digital creator specializing in public relations and social media strategy.",
+    authors: [{ name: "zakyislm", url: "https://zakyislm.github.io" }],
     verification: {
       google: "jeEVaKYPTiVYoljU5_I6pYmI6zHZwW28XJLc1ZtNX4g",
     },
